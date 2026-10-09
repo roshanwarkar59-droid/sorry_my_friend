@@ -110,6 +110,7 @@ main {
   margin-left: 40px;
 }
 
+/* Center the character immediately */
 .runner {
   position: absolute;
   width: clamp(140px, 17vw, 200px);
@@ -129,7 +130,7 @@ main {
   filter: drop-shadow(0 10px 15px #09071188);
 }
 
-/* Repeated squat-style body movement */
+/* Repeated squat-style movement */
 .runner .character {
   transform-origin: 50% 100%;
   animation: squat-in-place 1.4s ease-in-out infinite;
@@ -139,6 +140,7 @@ main {
   0%, 100% {
     transform: translateY(0) scaleY(1);
   }
+
   40%, 65% {
     transform: translateY(12px) scaleY(.96);
   }
@@ -186,8 +188,13 @@ main {
 }
 
 @keyframes heart-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Apology card */
@@ -280,7 +287,7 @@ footer {
   line-height: 1.8;
 }
 
-/* Tablet layout */
+/* Tablet and mobile layout */
 @media (max-width: 800px) {
   .scene {
     padding: 25px 18px;
@@ -364,7 +371,7 @@ footer {
   }
 }
 
-/* Respect reduced-motion settings */
+/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .runner .character,
   .arrival-heart {
