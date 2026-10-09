@@ -15,17 +15,27 @@
 <svg class="character" viewBox="0 0 220 340" role="img" aria-label="Boy holding his ears and doing squats">
   <!-- Legs: upper legs and lower legs bend together -->
   <g class="squat-legs">
-    <g class="left-leg">
-      <path d="M91 205 L80 238 L57 260" fill="none" stroke="#bfc0c9" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M57 260 Q39 258 30 272 Q48 284 67 271 L76 255" fill="#fff" stroke="#343344" stroke-width="4"/>
-      <path d="M35 272 L56 274" stroke="#e84d70" stroke-width="5"/>
-    </g>
-    <g class="right-leg">
-      <path d="M120 205 L139 236 L160 258" fill="none" stroke="#c8c8d0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M158 253 Q181 251 194 268 Q177 285 154 271 L150 255" fill="#fff" stroke="#343344" stroke-width="4"/>
-      <path d="M166 270 L187 269" stroke="#e84d70" stroke-width="5"/>
-    </g>
+    
+<!-- Left leg: upper thigh and bending shin -->
+<g class="left-leg">
+  <path d="M91 205 L82 232" fill="none" stroke="#bfc0c9" stroke-width="23" stroke-linecap="round"/>
+  <g class="left-shin">
+    <path d="M82 232 L62 252" fill="none" stroke="#bfc0c9" stroke-width="21" stroke-linecap="round"/>
+    <path d="M62 252 Q43 252 32 267 Q48 281 68 267 L76 249" fill="#fff" stroke="#343344" stroke-width="4"/>
+    <path d="M37 267 L57 269" stroke="#e84d70" stroke-width="5"/>
   </g>
+</g>
+
+<!-- Right leg: upper thigh and bending shin -->
+<g class="right-leg">
+  <path d="M120 205 L133 232" fill="none" stroke="#c8c8d0" stroke-width="24" stroke-linecap="round"/>
+  <g class="right-shin">
+    <path d="M133 232 L153 251" fill="none" stroke="#c8c8d0" stroke-width="22" stroke-linecap="round"/>
+    <path d="M151 246 Q175 245 194 263 Q178 282 153 267 L146 250" fill="#fff" stroke="#343344" stroke-width="4"/>
+    <path d="M163 266 L185 265" stroke="#e84d70" stroke-width="5"/>
+  </g>
+</g>
+
 
   <!-- Body and head move down during the squat -->
   <g class="squat-upper">
