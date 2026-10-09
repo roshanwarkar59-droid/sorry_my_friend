@@ -171,22 +171,33 @@ main {
   }
 }
 
-@keyframes left-knee-motion {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  40%, 65% {
-    transform: rotate(-13deg);
-  }
+
+/* Visible knee bends during each squat */
+.left-leg,
+.right-leg {
+  transform-box: view-box;
 }
 
-@keyframes right-knee-motion {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  40%, 65% {
-    transform: rotate(13deg);
-  }
+.left-shin {
+  transform-box: view-box;
+  transform-origin: 82px 232px;
+  animation: left-shin-bend 1.5s ease-in-out infinite;
+}
+
+.right-shin {
+  transform-box: view-box;
+  transform-origin: 133px 232px;
+  animation: right-shin-bend 1.5s ease-in-out infinite;
+}
+
+@keyframes left-shin-bend {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 65% { transform: rotate(-35deg); }
+}
+
+@keyframes right-shin-bend {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 65% { transform: rotate(35deg); }
 }
 
 @keyframes squat-upper-motion {
