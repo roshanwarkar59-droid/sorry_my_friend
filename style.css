@@ -74,6 +74,7 @@ header {
   letter-spacing: .13em;
 }
 
+/* Main layout */
 main {
   width: 100%;
   max-width: 1100px;
@@ -84,7 +85,7 @@ main {
   gap: 24px;
 }
 
-/* Character stage */
+/* Character area */
 .runway {
   position: relative;
   width: 100%;
@@ -110,16 +111,16 @@ main {
   margin-left: 40px;
 }
 
-/* Center the character immediately */
+/* Character starts centered immediately */
 .runner {
   position: absolute;
-  width: clamp(140px, 17vw, 200px);
-  left: 50%;
+  width: 150px;
+  left: 50% !important;
   bottom: 25px;
   z-index: 2;
   margin: 0;
   transform: translateX(-50%);
-  animation: none;
+  animation: none !important;
 }
 
 .character {
@@ -130,22 +131,83 @@ main {
   filter: drop-shadow(0 10px 15px #09071188);
 }
 
-/* Repeated squat-style movement */
-.runner .character {
-  transform-origin: 50% 100%;
-  animation: squat-in-place 1.4s ease-in-out infinite;
+/* Squat animation: coordinated body and legs */
+.squat-legs {
+  transform-box: view-box;
+  transform-origin: 110px 205px;
+  animation: squat-legs-motion 1.5s ease-in-out infinite;
 }
 
-@keyframes squat-in-place {
+.left-leg {
+  transform-box: view-box;
+  transform-origin: 91px 205px;
+  animation: left-knee-motion 1.5s ease-in-out infinite;
+}
+
+.right-leg {
+  transform-box: view-box;
+  transform-origin: 120px 205px;
+  animation: right-knee-motion 1.5s ease-in-out infinite;
+}
+
+.squat-upper {
+  transform-box: view-box;
+  transform-origin: 110px 205px;
+  animation: squat-upper-motion 1.5s ease-in-out infinite;
+}
+
+.squat-arms {
+  transform-box: view-box;
+  transform-origin: 110px 135px;
+  animation: squat-arms-motion 1.5s ease-in-out infinite;
+}
+
+@keyframes squat-legs-motion {
   0%, 100% {
-    transform: translateY(0) scaleY(1);
+    transform: translateY(0);
   }
-
   40%, 65% {
-    transform: translateY(12px) scaleY(.96);
+    transform: translateY(9px);
   }
 }
 
+@keyframes left-knee-motion {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  40%, 65% {
+    transform: rotate(-13deg);
+  }
+}
+
+@keyframes right-knee-motion {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  40%, 65% {
+    transform: rotate(13deg);
+  }
+}
+
+@keyframes squat-upper-motion {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  40%, 65% {
+    transform: translateY(12px) rotate(3deg);
+  }
+}
+
+@keyframes squat-arms-motion {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40%, 65% {
+    transform: translateY(2px);
+  }
+}
+
+/* Floor and decorations */
 .floor {
   position: absolute;
   bottom: 21px;
@@ -191,7 +253,6 @@ main {
   0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-8px);
   }
@@ -307,7 +368,7 @@ footer {
 
   .runner {
     width: 150px;
-    left: 50%;
+    left: 50% !important;
     bottom: 15px;
   }
 
@@ -371,9 +432,13 @@ footer {
   }
 }
 
-/* Respect reduced-motion preferences */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .runner .character,
+  .squat-legs,
+  .left-leg,
+  .right-leg,
+  .squat-upper,
+  .squat-arms,
   .arrival-heart {
     animation: none;
   }
