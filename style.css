@@ -1,95 +1,124 @@
-eight:390px;position:relative;overflow:hidden}.sorry-note{position:absolute;top:14%;left:10%;font-family:cursive;font-size:clamp(22px,3vw,34px);transform:rotate(-8deg);color:#fff}.sorry-note span{display:block;color:#ff9bce;margin-left:40px}.runner{position:absolute;width:clamp(140px,17vw,225px);left:-250px;bottom:20px;z-index:2;animation:runAcross 2.7s cubic-bezier(.2,.75,.25,1) .3s forwards,runBob .19s linear .3s 13}.character{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 15px #09071188)}.leg,.arm{transform-box:fill-box;transform-origin:top center}.leg-front{animation:legFront .22s ease-in-out infinite alternate}.leg-back{animation:legBack .22s ease-in-out infinite alternate}.arm-front{animation:armFront .22s ease-in-out infinite alternate}.arm-back{animation:armBack .22s ease-in-out infinite alternate}.floor{position:absolute;bottom:21px;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#ff9bd4,#8f77d9,transparent);box-shadow:0 0 17px #f66fb4}.dust{position:absolute;bottom:15px;left:0;width:65px;height:27px;border-radius:50%;background:#ffd8ef88;filter:blur(7px);opacity:0}.dust1{animation:dust .36s ease-out 2.6s 5}.dust2{animation:dust .36s ease-out 2.85s 5}.arrival-heart{position:absolute;bottom:135px;right:9%;font-size:32px;opacity:0;animation:heartPop .6s ease 2.85s forwards}.card{position:relative;border:1px solid #e7a2d54c;border-radius:30px;background:linear-gradient(145deg,#ffffff12,#bfa0ff0a);box-shadow:0 20px 70px #05030b55,inset 0 1px #ffffff14;padding:clamp(24px,4vw,54px);backdrop-filter:blur(10px);z-index:1}.outline-heart{font-size:42px;color:#ff91c9;line-height:1;margin-bottom:20px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.13em;color:#ffb4d8}.card h1{font-size:clamp(36px,4.1vw,60px);letter-spacing:-.045em;line-height:1.08;margin:16px 0 28px}.card h1 span{color:#ff8fc9}.message{font-size:clamp(15px,1.35vw,19px);line-height:1.9;color:#f4edf9}.signature{font-size:clamp(15px,1.4vw,19px);font-style:italic;color:#ff9ecf;margin:24px 0}.card button{border:0;border-radius:100px;padding:16px 27px;background:linear-gradient(100deg,#ff9ccc,#ffb2d8);font-size:16px;font-weight:800;color:#211329;box-shadow:0 0 26px #f56eb644;cursor:pointer;transition:transform .2s}.card button:hover{transform:scale(1.04)}.small-note{font-size:14px;color:#e3d4e9;line-height:1.6}footer{position:relative;text-align:center;color:#c9b7d0;margin-top:25px;font-size:14px}.glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}.glow1{width:240px;height:240px;background:#ff4c9a18;left:-100px;top:35%}.glow2{width:280px;height:280px;background:#7655ff19;right:-90px;bottom:0}@keyframes runAcross{0%{left:-250px;transform:scale(.86) rotate(-2deg)}70%{left:47%;transform:scale(1.02) rotate(0)}85%{left:45%;transform:scale(.99)}100%{left:45%;transform:scale(1)}}@keyframes runBob{0%{margin-bottom:0}50%{margin-bottom:12px}100%{margin-bottom:0}}@keyframes legFront{from{transform:rotate(-30deg)}to{transform:rotate(33deg)}}@keyframes legBack{from{transform:rotate(30deg)}to{transform:rotate(-33deg)}}@keyframes armFront{from{transform:rotate(27deg)}to{transform:rotate(-35deg)}}@keyframes armBack{from{transform:rotate(-25deg)}to{transform:rotate(35deg)}}@keyframes dust{0%{opacity:0;transform:translateX(0) scale(.5)}30%{opacity:.9}100%{opacity:0;transform:translateX(-80px) scale(1.5)}}@keyframes heartPop{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.3)}100%{opacity:1;transform:scale(1)}}@media(max-width:800px){main{grid-template-columns:1fr;gap:5px}.runway{height:320px;max-height:none;min-height:320px;order:2}.card{order:1;padding:28px}.runner{width:150px;bottom:15px}.sorry-note{top:4%;left:8%}.arrival-heart{bottom:90px;right:10%}header{margin-bottom:20px}.card h1{font-size:38px}}@media(prefers-reduced-motion:reduce){.runner,.leg-front,.leg-back,.arm-front,.arm-back{animation-duration:1ms!important;animation-iteration-count:1!important}}
 
-
-/* Mobile character positioning fix */
-@media screen and (max-width: 600px) {
-  .runway {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    min-height: 280px;
-    max-height: 280px;
-    overflow: hidden;
-    margin-top: 0;
-  }
-
-  .runner {
-    width: 140px;
-    max-width: 45vw;
-    left: -160px;
-    bottom: 15px;
-    animation:
-      runAcrossMobile 2.7s cubic-bezier(.2,.75,.25,1) .3s forwards,
-      runBob .19s linear .3s 13;
-  }
-
-  .character {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .arrival-heart {
-    bottom: 100px;
-    right: 8%;
-  }
-
-  @keyframes runAcrossMobile {
-    0% {
-      left: -160px;
-      transform: scale(.86) rotate(-2deg);
-    }
-    70% {
-      left: calc(50% - 70px);
-      transform: scale(1.02) rotate(0);
-    }
-    85% {
-      left: calc(50% - 70px);
-      transform: scale(.99);
-    }
-    100% {
-      left: calc(50% - 70px);
-      transform: scale(1);
-    }
-  }
+* {
+  box-sizing: border-box;
 }
 
-/* Improve text contrast and readability */
-.card {
-  color: #24152b;
-  background: linear-gradient(145deg, #2a2035, #21182f);
+html {
+  margin: 0;
+  min-height: 100%;
+  background: #100d19;
 }
 
-.card h1 {
-  color: #ffffff;
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 15% 45%, #422039 0%, transparent 42%),
+    radial-gradient(ellipse at 85% 75%, #27204d 0%, transparent 45%),
+    linear-gradient(145deg, #100d19, #1b1027);
 }
 
-.eyebrow {
-  color: #ffb4d8;
+.scene {
+  position: relative;
+  min-height: 100vh;
+  padding: 35px 24px 25px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.message {
-  color: #f7edf7;
+.stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ff9bcf88 1.5px, transparent 2.5px),
+    radial-gradient(circle, #b9a4ff66 1.5px, transparent 2.5px);
+  background-size: 130px 150px, 190px 180px;
+  background-position: 0 0, 55px 65px;
 }
 
-.signature {
-  color: #ff9ecf;
+.glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
 }
 
-.small-note {
-  color: #eaddeb;
+.glow1 {
+  width: 240px;
+  height: 240px;
+  background: #ff4c9a20;
+  left: -100px;
+  top: 35%;
 }
 
-.card button {
-  color: #24152b;
+.glow2 {
+  width: 280px;
+  height: 280px;
+  background: #7655ff24;
+  right: -90px;
+  bottom: 0;
 }
 
-/* FINAL: Ear-holding squat animation */
+header {
+  position: relative;
+  text-align: center;
+  margin: 8px auto 30px;
+  color: #ffafd5;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 24px;
+}
+
+/* Character stage */
+.runway {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  min-width: 0;
+  overflow: hidden;
+  order: 1;
+}
+
+.sorry-note {
+  position: absolute;
+  top: 14%;
+  left: 10%;
+  font-family: cursive;
+  font-size: clamp(22px, 3vw, 34px);
+  transform: rotate(-8deg);
+  color: #fff;
+}
+
+.sorry-note span {
+  display: block;
+  color: #ff9bce;
+  margin-left: 40px;
+}
+
 .runner {
-  left: calc(50% - 75px) !important;
-  bottom: 15px !important;
-  width: 150px !important;
-  animation: none !important;
+  position: absolute;
+  width: clamp(140px, 17vw, 200px);
+  left: 50%;
+  bottom: 25px;
+  z-index: 2;
+  margin: 0;
+  transform: translateX(-50%);
+  animation: none;
 }
 
 .character {
@@ -97,53 +126,248 @@ eight:390px;position:relative;overflow:hidden}.sorry-note{position:absolute;top:
   width: 100%;
   height: auto;
   overflow: visible;
-  animation: none !important;
+  filter: drop-shadow(0 10px 15px #09071188);
 }
 
-.squat-torso {
-  transform-box: view-box;
-  transform-origin: 50% 200px;
-  animation: squatBody 1.3s ease-in-out infinite;
+/* Repeated squat-style body movement */
+.runner .character {
+  transform-origin: 50% 100%;
+  animation: squat-in-place 1.4s ease-in-out infinite;
 }
 
-.squat-legs {
-  transform-box: view-box;
-  transform-origin: 50% 205px;
-  animation: squatLegs 1.3s ease-in-out infinite;
+@keyframes squat-in-place {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  40%, 65% {
+    transform: translateY(12px) scaleY(.96);
+  }
 }
 
-.squat-arms {
-  transform-box: view-box;
-  transform-origin: 50% 135px;
-  animation: squatArms 1.3s ease-in-out infinite;
+.floor {
+  position: absolute;
+  bottom: 21px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9bd4,
+    #8f77d9,
+    transparent
+  );
+  box-shadow: 0 0 17px #f66fb4;
 }
 
-@keyframes squatBody {
+.dust {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 65px;
+  height: 27px;
+  border-radius: 50%;
+  background: #ffd8ef88;
+  filter: blur(7px);
+  opacity: 0;
+}
+
+.dust1,
+.dust2 {
+  display: none;
+}
+
+.arrival-heart {
+  position: absolute;
+  bottom: 135px;
+  right: 9%;
+  font-size: 32px;
+  animation: heart-float 1.5s ease-in-out infinite;
+}
+
+@keyframes heart-float {
   0%, 100% { transform: translateY(0); }
-  40%, 65% { transform: translateY(20px); }
+  50% { transform: translateY(-8px); }
 }
 
-@keyframes squatLegs {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  40%, 65% { transform: translateY(8px) rotate(-8deg); }
+/* Apology card */
+.card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(24px, 4vw, 54px);
+  border: 1px solid #e7a2d56b;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #2a2035, #21182f);
+  box-shadow:
+    0 20px 70px #05030b55,
+    inset 0 1px #ffffff14;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  order: 2;
+  color: #f7edf7;
 }
 
-@keyframes squatArms {
-  0%, 100% { transform: rotate(0); }
-  40%, 65% { transform: rotate(-5deg); }
+.outline-heart {
+  font-size: 42px;
+  color: #ff91c9;
+  line-height: 1;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 600px) {
-  .runner {
-    left: calc(50% - 75px) !important;
-    width: 150px !important;
+.eyebrow {
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .13em;
+  color: #ffb4d8;
+}
+
+.card h1 {
+  color: #fff;
+  font-size: clamp(36px, 4.1vw, 60px);
+  letter-spacing: -.045em;
+  line-height: 1.08;
+  margin: 16px 0 28px;
+  overflow-wrap: anywhere;
+}
+
+.card h1 span {
+  color: #ff8fc9;
+}
+
+.message {
+  font-size: clamp(15px, 1.35vw, 19px);
+  line-height: 1.9;
+  color: #f7edf7;
+  overflow-wrap: anywhere;
+}
+
+.signature {
+  font-size: clamp(15px, 1.4vw, 19px);
+  font-style: italic;
+  color: #ff9ecf;
+  margin: 24px 0;
+}
+
+.card button {
+  border: 0;
+  border-radius: 100px;
+  padding: 16px 27px;
+  background: linear-gradient(100deg, #ff9ccc, #ffb2d8);
+  font-size: 16px;
+  font-weight: 800;
+  color: #24152b;
+  box-shadow: 0 0 26px #f56eb644;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.card button:hover {
+  transform: scale(1.04);
+}
+
+.small-note {
+  font-size: 14px;
+  color: #eaddeb;
+  line-height: 1.6;
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  color: #d4c2dc;
+  margin: 25px auto 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tablet layout */
+@media (max-width: 800px) {
+  .scene {
+    padding: 25px 18px;
+  }
+
+  main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
 
   .runway {
     height: 280px;
     min-height: 280px;
-    overflow: hidden;
+    max-height: 280px;
+    order: 1;
+  }
+
+  .runner {
+    width: 150px;
+    left: 50%;
+    bottom: 15px;
+  }
+
+  .sorry-note {
+    top: 4%;
+    left: 8%;
+  }
+
+  .arrival-heart {
+    bottom: 95px;
+    right: 10%;
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  .card {
+    order: 2;
+    padding: 28px;
+  }
+
+  .card h1 {
+    font-size: clamp(34px, 7vw, 42px);
   }
 }
 
+/* Small phones */
+@media (max-width: 380px) {
+  .scene {
+    padding: 20px 12px;
+  }
 
+  .runway {
+    height: 260px;
+    min-height: 260px;
+    max-height: 260px;
+  }
+
+  .runner {
+    width: 140px;
+  }
+
+  .card {
+    padding: 23px 20px;
+    border-radius: 25px;
+  }
+
+  .card h1 {
+    font-size: 34px;
+  }
+
+  .message {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .card button {
+    max-width: 100%;
+    padding: 15px 20px;
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .runner .character,
+  .arrival-heart {
+    animation: none;
+  }
+}
