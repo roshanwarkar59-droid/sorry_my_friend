@@ -84,3 +84,66 @@ eight:390px;position:relative;overflow:hidden}.sorry-note{position:absolute;top:
   color: #24152b;
 }
 
+/* FINAL: Ear-holding squat animation */
+.runner {
+  left: calc(50% - 75px) !important;
+  bottom: 15px !important;
+  width: 150px !important;
+  animation: none !important;
+}
+
+.character {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  animation: none !important;
+}
+
+.squat-torso {
+  transform-box: view-box;
+  transform-origin: 50% 200px;
+  animation: squatBody 1.3s ease-in-out infinite;
+}
+
+.squat-legs {
+  transform-box: view-box;
+  transform-origin: 50% 205px;
+  animation: squatLegs 1.3s ease-in-out infinite;
+}
+
+.squat-arms {
+  transform-box: view-box;
+  transform-origin: 50% 135px;
+  animation: squatArms 1.3s ease-in-out infinite;
+}
+
+@keyframes squatBody {
+  0%, 100% { transform: translateY(0); }
+  40%, 65% { transform: translateY(20px); }
+}
+
+@keyframes squatLegs {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  40%, 65% { transform: translateY(8px) rotate(-8deg); }
+}
+
+@keyframes squatArms {
+  0%, 100% { transform: rotate(0); }
+  40%, 65% { transform: rotate(-5deg); }
+}
+
+@media (max-width: 600px) {
+  .runner {
+    left: calc(50% - 75px) !important;
+    width: 150px !important;
+  }
+
+  .runway {
+    height: 280px;
+    min-height: 280px;
+    overflow: hidden;
+  }
+}
+
+
