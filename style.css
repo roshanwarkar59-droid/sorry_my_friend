@@ -53,3 +53,34 @@ eight:390px;position:relative;overflow:hidden}.sorry-note{position:absolute;top:
     }
   }
 }
+
+/* Improve text contrast and readability */
+.card {
+  color: #24152b;
+  background: linear-gradient(145deg, #2a2035, #21182f);
+}
+
+.card h1 {
+  color: #ffffff;
+}
+
+.eyebrow {
+  color: #ffb4d8;
+}
+
+.message {
+  color: #f7edf7;
+}
+
+.signature {
+  color: #ff9ecf;
+}
+
+.small-note {
+  color: #eaddeb;
+}
+
+.card button {
+  color: #24152b;
+}
+
