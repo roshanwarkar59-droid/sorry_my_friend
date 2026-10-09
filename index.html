@@ -11,21 +11,33 @@
     <section class="runway" aria-label="Cartoon character running in">
       <div class="sorry-note">Sorry... <span>♡</span></div>
       <div class="runner" id="runner">
-<svg class="character" viewBox="0 0 220 340" role="img" aria-label="Cartoon boy holding ears and squatting">
-  <!-- Legs and shoes -->
+
+<svg class="character" viewBox="0 0 220 340" role="img" aria-label="Boy holding his ears and doing squats">
+  <!-- Legs: upper legs and lower legs bend together -->
   <g class="squat-legs">
-    <path d="M88 205 Q78 235 62 251 L43 267" fill="none" stroke="#bfc0c9" stroke-width="23" stroke-linecap="round"/>
-    <path d="M43 267 Q24 270 24 283 Q45 293 64 278 L72 264" fill="#fff" stroke="#343344" stroke-width="4"/>
-    <path d="M124 205 Q142 234 157 251 L177 266" fill="none" stroke="#c8c8d0" stroke-width="24" stroke-linecap="round"/>
-    <path d="M174 261 Q198 261 203 280 Q183 292 160 279 L153 265" fill="#fff" stroke="#343344" stroke-width="4"/>
+    <g class="left-leg">
+      <path d="M91 205 L80 238 L57 260" fill="none" stroke="#bfc0c9" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M57 260 Q39 258 30 272 Q48 284 67 271 L76 255" fill="#fff" stroke="#343344" stroke-width="4"/>
+      <path d="M35 272 L56 274" stroke="#e84d70" stroke-width="5"/>
+    </g>
+    <g class="right-leg">
+      <path d="M120 205 L139 236 L160 258" fill="none" stroke="#c8c8d0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M158 253 Q181 251 194 268 Q177 285 154 271 L150 255" fill="#fff" stroke="#343344" stroke-width="4"/>
+      <path d="M166 270 L187 269" stroke="#e84d70" stroke-width="5"/>
+    </g>
   </g>
 
-  <!-- Shirt -->
-  <g class="squat-torso">
-    <path d="M75 117 Q96 103 125 116 L143 198 Q112 216 82 202 L65 151Z" fill="#f6e6cc" stroke="#5d4c45" stroke-width="3"/>
+  <!-- Body and head move down during the squat -->
+  <g class="squat-upper">
+    <path d="M72 117 Q92 103 125 116 L145 199 Q116 221 83 205 L65 151Z" fill="#f6e6cc" stroke="#5d4c45" stroke-width="3"/>
+    <path d="M74 119 L88 137 L105 119 L123 122 L116 143 L100 154 L83 139Z" fill="#fff0d8" stroke="#c7b39d" stroke-width="2"/>
+    <path d="M102 140 L102 164" stroke="#33313a" stroke-width="3"/>
+    <circle cx="102" cy="167" r="2" fill="#33313a"/>
+
+    <!-- Neck -->
     <path d="M88 105 L87 121 Q101 133 115 119 L113 103Z" fill="#eeb894" stroke="#7d5547" stroke-width="2"/>
 
-    <!-- Face -->
+    <!-- Head and ears -->
     <ellipse cx="101" cy="72" rx="43" ry="49" fill="#f4c39f" stroke="#654b43" stroke-width="3"/>
     <ellipse cx="59" cy="77" rx="8" ry="12" fill="#eeb894"/>
     <ellipse cx="142" cy="76" rx="8" ry="12" fill="#eeb894"/>
@@ -35,6 +47,7 @@
     <path d="M65 47 Q79 27 91 37 M88 35 Q106 17 119 35 M112 39 Q131 28 139 46" fill="none" stroke="#554047" stroke-width="5" stroke-linecap="round"/>
 
     <!-- Glasses and face -->
+    <path d="M82 75 Q91 69 98 75 M111 75 Q120 69 127 75" stroke="#3c2a2a" stroke-width="2" fill="none"/>
     <g fill="none" stroke="#282631" stroke-width="4">
       <rect x="73" y="68" width="27" height="22" rx="7"/>
       <rect x="107" y="68" width="27" height="22" rx="7"/>
@@ -46,16 +59,18 @@
     <circle cx="121" cy="77" r="1.5" fill="white"/>
     <path d="M104 84 L101 94 L109 95" fill="none" stroke="#b47762" stroke-width="2" stroke-linecap="round"/>
     <path d="M96 101 Q108 109 120 98" fill="none" stroke="#8f4d4a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M83 108 Q103 119 123 106" fill="none" stroke="#62453d" stroke-width="3"/>
 
-    <!-- Arms raised to ears -->
+    <!-- Arms reach up to hold the ears -->
     <g class="squat-arms">
-      <path d="M76 135 Q61 113 59 83" fill="none" stroke="#f4c29d" stroke-width="15" stroke-linecap="round"/>
+      <path d="M76 132 Q61 110 58 83" fill="none" stroke="#f4c29d" stroke-width="15" stroke-linecap="round"/>
       <path d="M52 78 Q54 67 63 72 L69 80 L61 89 L54 86Z" fill="#eab28d"/>
-      <path d="M130 135 Q145 113 143 83" fill="none" stroke="#f4c29d" stroke-width="15" stroke-linecap="round"/>
+      <path d="M130 132 Q145 111 143 83" fill="none" stroke="#f4c29d" stroke-width="15" stroke-linecap="round"/>
       <path d="M137 79 Q139 67 148 72 L153 80 L146 89 L139 86Z" fill="#eab28d"/>
     </g>
   </g>
 </svg>
+
       </div>
       <div class="floor"></div><div class="dust dust1"></div><div class="dust dust2"></div>
       <div class="arrival-heart">❤️</div>
