@@ -374,3 +374,40 @@ footer {
     animation: none;
   }
 }
+
+.runner {
+  display: block !important;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  width: 160px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.character-video {
+  display: block !important;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 800px) {
+  .runway {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .runner {
+    width: 145px;
+    bottom: 15px;
+  }
+
+  .character-video {
+    max-height: 210px;
+  }
+}
+
