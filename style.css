@@ -106,16 +106,25 @@ main {
 }
 
 .sorry-note span {
-  display: block;
+  display: inline-block;
   color: #ff9bce;
-  margin-left: 40px;
+  margin-left: 6px;
 }
 
-/* Character starts centered immediately */
+.sorry-note .baski-text {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: clamp(18px, 2.5vw, 27px);
+  color: #ff91c8;
+  white-space: normal;
+}
+
+/* Video character */
 .runner {
   position: absolute;
-  width: 150px;
-  left: 50% !important;
+  width: 190px;
+  max-width: 48%;
+  left: 50%;
   bottom: 25px;
   z-index: 2;
   margin: 0;
@@ -123,99 +132,15 @@ main {
   animation: none !important;
 }
 
-.character {
+.character-video {
   display: block;
   width: 100%;
+  max-height: 340px;
   height: auto;
-  overflow: visible;
+  object-fit: contain;
+  background: transparent;
   filter: drop-shadow(0 10px 15px #09071188);
-}
-
-/* Squat animation: coordinated body and legs */
-.squat-legs {
-  transform-box: view-box;
-  transform-origin: 110px 205px;
-  animation: squat-legs-motion 1.5s ease-in-out infinite;
-}
-
-.left-leg {
-  transform-box: view-box;
-  transform-origin: 91px 205px;
-  animation: left-knee-motion 1.5s ease-in-out infinite;
-}
-
-.right-leg {
-  transform-box: view-box;
-  transform-origin: 120px 205px;
-  animation: right-knee-motion 1.5s ease-in-out infinite;
-}
-
-.squat-upper {
-  transform-box: view-box;
-  transform-origin: 110px 205px;
-  animation: squat-upper-motion 1.5s ease-in-out infinite;
-}
-
-.squat-arms {
-  transform-box: view-box;
-  transform-origin: 110px 135px;
-  animation: squat-arms-motion 1.5s ease-in-out infinite;
-}
-
-@keyframes squat-legs-motion {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  40%, 65% {
-    transform: translateY(9px);
-  }
-}
-
-
-/* Visible knee bends during each squat */
-.left-leg,
-.right-leg {
-  transform-box: view-box;
-}
-
-.left-shin {
-  transform-box: view-box;
-  transform-origin: 82px 232px;
-  animation: left-shin-bend 1.5s ease-in-out infinite;
-}
-
-.right-shin {
-  transform-box: view-box;
-  transform-origin: 133px 232px;
-  animation: right-shin-bend 1.5s ease-in-out infinite;
-}
-
-@keyframes left-shin-bend {
-  0%, 100% { transform: rotate(0deg); }
-  40%, 65% { transform: rotate(-35deg); }
-}
-
-@keyframes right-shin-bend {
-  0%, 100% { transform: rotate(0deg); }
-  40%, 65% { transform: rotate(35deg); }
-}
-
-@keyframes squat-upper-motion {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  40%, 65% {
-    transform: translateY(12px) rotate(3deg);
-  }
-}
-
-@keyframes squat-arms-motion {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  40%, 65% {
-    transform: translateY(2px);
-  }
+  mix-blend-mode: screen;
 }
 
 /* Floor and decorations */
@@ -235,23 +160,6 @@ main {
   box-shadow: 0 0 17px #f66fb4;
 }
 
-.dust {
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  width: 65px;
-  height: 27px;
-  border-radius: 50%;
-  background: #ffd8ef88;
-  filter: blur(7px);
-  opacity: 0;
-}
-
-.dust1,
-.dust2 {
-  display: none;
-}
-
 .arrival-heart {
   position: absolute;
   bottom: 135px;
@@ -261,12 +169,8 @@ main {
 }
 
 @keyframes heart-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 /* Apology card */
@@ -359,7 +263,7 @@ footer {
   line-height: 1.8;
 }
 
-/* Tablet and mobile layout */
+/* Tablet and mobile */
 @media (max-width: 800px) {
   .scene {
     padding: 25px 18px;
@@ -378,9 +282,14 @@ footer {
   }
 
   .runner {
-    width: 150px;
-    left: 50% !important;
+    width: 170px;
+    max-width: 48%;
+    left: 50%;
     bottom: 15px;
+  }
+
+  .character-video {
+    max-height: 240px;
   }
 
   .sorry-note {
@@ -420,7 +329,11 @@ footer {
   }
 
   .runner {
-    width: 140px;
+    width: 145px;
+  }
+
+  .character-video {
+    max-height: 220px;
   }
 
   .card {
@@ -443,13 +356,8 @@ footer {
   }
 }
 
-/* Accessibility */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .squat-legs,
-  .left-leg,
-  .right-leg,
-  .squat-upper,
-  .squat-arms,
   .arrival-heart {
     animation: none;
   }
