@@ -125,28 +125,43 @@ main {
   white-space: normal;
 }
 
-/* ===== VIDEO CHARACTER ===== */
+
 .runner {
   position: absolute;
-  width: clamp(125px, 16vw, 190px);
+  width: 150px;
   left: 50%;
   bottom: 25px;
-  z-index: 2;
-  margin: 0;
+  z-index: 5;
   transform: translateX(-50%);
-  animation: none !important;
+  display: block;
 }
 
 .character-video {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 340px;
+  max-height: 220px;
   object-fit: contain;
   background: transparent;
-  mix-blend-mode: normal;
-  filter: drop-shadow(0 8px 12px #09071166);
+  mix-blend-mode: screen;
 }
+
+@media (max-width: 800px) {
+  .runway {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .runner {
+    width: 140px;
+    bottom: 15px;
+  }
+
+  .character-video {
+    max-height: 210px;
+  }
+}
+
 
 /* ===== FLOOR ===== */
 .floor {
